@@ -1,0 +1,27 @@
+
+:host {
+    display: none;
+}  
+:host.is-open {
+    display: block;
+}
+.flex-container{
+  display:flex;
+  width:100%;
+}
+.flex-center{
+  align-items: center;
+  justify-content: center;
+}
+.fa{
+  cursor:pointer;
+  font-size:5em;
+}
+.content{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.trophy{
+    float: left;
+    margin-right: 20px;
+}

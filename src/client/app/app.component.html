@@ -1,0 +1,4 @@
+<app-main (toggleRanking)="toggleRanking()" (toggleUsersSignUp)="toggleUsersSignUp()"></app-main>
+<app-create-new-game [isOpen]="userSignUpIsOpened" (toggleNewGame)="toggleNewGame()"></app-create-new-game>
+<app-ranking [isOpen]="rankingIsOpened"></app-ranking>
+<app-move-cmp [isOpen]="newGameIsOpened"></app-move-cmp>

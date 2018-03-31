@@ -1,0 +1,28 @@
+<mat-card-title>
+    Game Score
+</mat-card-title>
+
+<mat-card-content>
+    <mat-list>
+        <mat-list-item>
+            <span fxFlex="30%;" fxFlex.xs="80%">Round</span>
+            <span fxFlex="40%;" fxFlex.xs="80%">Winner</span>
+            <span fxFlex="30%;" fxFlex.xs="80%">Movement</span>
+        </mat-list-item>
+
+        <mat-list-item *ngFor="let score of scores">
+
+            <span fxFlex="30%;" fxFlex.xs="80%">
+                <b>{{ score.round }}</b>
+            </span>
+            <span fxFlex="40%;" fxFlex.xs="80%">{{ score.winnerName }}</span>
+            <span fxFlex="30%;" fxFlex.xs="80%">
+                <i class="fa fa-hand-{{ score.moveOne }}-o playerOne" title="{{ score.moveOne }}"></i>
+                <i class="fa fa-hand-{{ score.moveTwo }}-o playerTwo" title="{{ score.moveTwo }}"></i>
+            </span>
+
+        </mat-list-item>
+
+    </mat-list>
+
+</mat-card-content>

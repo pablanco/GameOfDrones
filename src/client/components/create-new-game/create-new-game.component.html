@@ -1,0 +1,21 @@
+<mat-card>
+  <mat-card-title>
+    New Game
+  </mat-card-title>
+
+  <mat-card-content>
+    <p>Please enter players names</p>
+    <mat-horizontal-stepper linear #stepper>
+      <mat-step [stepControl]="frmStepOne">
+        <ng-template matStepLabel>Player #1</ng-template>
+        <app-player [lastOne]="false" (finished)="SaveUsers($event)"></app-player>
+      </mat-step>
+    
+      <mat-step [stepControl]="frmStepTwo">
+        <ng-template matStepLabel>Player #2</ng-template>
+        <app-player [lastOne]="true" (finished)="SaveUsers($event)"></app-player>
+      </mat-step>
+    </mat-horizontal-stepper>
+  </mat-card-content>
+
+</mat-card>

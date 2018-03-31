@@ -1,0 +1,29 @@
+<mat-card>
+	<form [formGroup]="frmStepOne">
+		<div class="flex-container flex-center">
+			<div class="content">
+				<mat-card>
+						<div class="flex-container flex-center">
+							<mat-card-title>
+								<i [ngClass]="{'playerTwo':(lastOne)}" class="fa fa-user playerOne center"></i>
+							</mat-card-title>
+						</div>
+					<mat-card-content>
+						<mat-form-field>
+							<input matInput formControlName="playerName" placeholder="Player Name" required>
+						</mat-form-field>
+					</mat-card-content>
+
+				</mat-card>
+			</div>
+		</div>
+
+		<div class="flex-container flex-center">
+		<mat-card-actions>
+			<button color="primary" *ngIf="!lastOne" (click)="StoreUser($event)" mat-raised-button matStepperNext class="nav-btn pull-right">Next</button>
+			<button color="primary" *ngIf="lastOne" (click)="FinishRegistry()" mat-raised-button matStepperNext class="nav-btn pull-right">Star Game</button>
+			<button color="primary" *ngIf="lastOne" mat-raised-button matStepperPrevious class="nav-btn pull-right">Back</button>
+		</mat-card-actions>
+		</div>
+	</form>
+</mat-card>

@@ -1,0 +1,50 @@
+<mat-card>
+  <mat-card-title>
+      History games
+  </mat-card-title>
+
+  
+  <mat-card-content>	
+    
+    
+      <div class="example-container mat-elevation-z8">
+          <div class="example-header">
+            <mat-form-field>
+              <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter by player">
+            </mat-form-field>
+          </div>
+        
+          <mat-table #table [dataSource]="dataSource">
+        
+            <!-- Position Column -->
+            <ng-container matColumnDef="position">
+              <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
+            </ng-container>
+        
+            <!-- Match Column -->
+            <ng-container matColumnDef="match">
+                <mat-header-cell *matHeaderCellDef> Match </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.winner}} vs {{element.looser}} </mat-cell>
+            </ng-container>
+
+            <!-- Name Column -->
+            <ng-container matColumnDef="winner">
+              <mat-header-cell *matHeaderCellDef> Winner </mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.winner}} </mat-cell>
+            </ng-container>
+
+            <!-- Date Column -->
+            <ng-container matColumnDef="date">
+                <mat-header-cell *matHeaderCellDef> Date </mat-header-cell>
+                <mat-cell *matCellDef="let element" > {{element.date | date: 'dd/MM/yyyy HH:mm'}} </mat-cell>
+              </ng-container>
+        
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+          </mat-table>
+        </div>
+
+  </mat-card-content>
+
+</mat-card>

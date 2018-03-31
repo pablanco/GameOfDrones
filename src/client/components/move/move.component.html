@@ -1,0 +1,32 @@
+<div fxLayout="row" fxLayout.xs="column">
+    <mat-card fxFlex="60%;" fxFlex.xs="80%">
+            
+            <div *ngIf="winner !== null">
+                    <div>
+                        <img class="trophy" src="client/assets/img/winner.png">
+                        <h2>We have a winner !!!</h2>
+                        <h3>{{winner}} is the new emperor</h3>
+                    </div>    
+                    <button mat-raised-button color="primary" (click)="Restart()">Restart game</button>
+            </div>
+            <div *ngIf="winner === null">
+                <mat-card-title>Round # {{roundNumber}}</mat-card-title>
+                <mat-card-content>Turn for player 
+                    <b class="playerOne" [ngClass]="{'playerTwo':(currentPlayerKey === 1)}">{{currentPlayer}}</b>
+                </mat-card-content>
+                <div class="flex-container flex-center" >
+                    <div *ngFor="let data of availableMoves; let i = index" class="content">
+                            <i class="playerOne" [ngClass]="{'playerTwo':(currentPlayerKey === 1)}" class="fa fa-hand-{{data.move}}-o" 
+                            title="{{data.move}}"
+                            (click)="choise(data.move)"></i>
+                    </div>
+                </div>
+                        
+            </div>
+          
+    </mat-card>
+
+    <mat-card fxFlex="40%;" fxFlex.xs="80%">
+            <app-score (toggleScore)="toggleScore()" [isOpen]="gameScoreIsOpened"></app-score>
+    </mat-card>
+</div>
