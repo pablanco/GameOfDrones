@@ -1,5 +1,6 @@
 :: Previous Requirement
-Mongo needs to be installed, please check https://docs.mongodb.com/manual/administration/install-community/
+Mongo needs to be installed, please check 
+https://docs.mongodb.com/manual/administration/install-community/
 
 :: To run the Game
 
